@@ -51,3 +51,17 @@ women_stores = Store.where("womens_apparel = ? and annual_revenue < ?", true,100
 women_stores.each do |x|
   puts x.inspect
 end
+
+store = Store.new
+store.name = "Ya"
+store.annual_revenue = 430000
+store.mens_apparel = true
+store.womens_apparel = true
+store.save 
+
+store = Store.new
+store.name = "Yaletown"
+store.annual_revenue = -10
+store.mens_apparel = true
+store.womens_apparel = true
+store.save 
