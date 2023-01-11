@@ -18,27 +18,27 @@ puts "----------"
 # Your code goes below here ...
 
 #Instantiate the store object without saving until the .save is called
-store = Store.new
-store.name = "Burnaby"
-store.annual_revenue = 300000
-store.mens_apparel = true
-store.womens_apparel = true
-store.save
+@store1 = Store.new
+@store1.name = "Burnaby"
+@store1.annual_revenue = 300000
+@store1.mens_apparel = true
+@store1.womens_apparel = true
+@store1.save
 
 #Save the record right away and stantiate the object
-store2 = Store.create(name: "Richmond",annual_revenue:1260000,mens_apparel:false,womens_apparel:true)
-puts store2.name
+@store2 = Store.create(name: "Richmond",annual_revenue:1260000,mens_apparel:false,womens_apparel:true)
+puts @store2.name
 
 #object will not instantiated until saved
-store3 = Store.new do |s|
+@store3 = Store.new do |s|
   s.name="Gastown"
   s.annual_revenue=190000
   s.mens_apparel=true
   s.womens_apparel=false
 end
-store3.save
+@store3.save
 
-puts store3.name
+puts @store3.name
 
 
 puts "Store count:", Store.count
